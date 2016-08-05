@@ -57,7 +57,7 @@ Partial Class Form1
         'mat
         '
         Me.mat.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mat.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mat.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mat.Location = New System.Drawing.Point(3, 3)
         Me.mat.Name = "mat"
         Me.mat.Size = New System.Drawing.Size(1049, 367)

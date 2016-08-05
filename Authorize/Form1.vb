@@ -1,6 +1,7 @@
 ﻿Public Class Form1
     Dim bold As Boolean = False
     Dim italic As Boolean = False
+    Dim oProject As String
 
     Private Sub resizePatrol() Handles Me.Resize
         workspace.Height = Height - saveBt.Height - 70
@@ -57,5 +58,8 @@
         ElseIf bool = False Then
             bool = True
         End If
+    End Sub
+    Sub setProject(pName As String)
+        oProject = pName
     End Sub
 End Class
