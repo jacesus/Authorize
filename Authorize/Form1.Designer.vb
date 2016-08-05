@@ -24,9 +24,11 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.workspace = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.mat = New System.Windows.Forms.RichTextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.workspace.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'workspace
@@ -42,6 +44,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.mat)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -49,6 +52,16 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'mat
+        '
+        Me.mat.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mat.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mat.Location = New System.Drawing.Point(3, 3)
+        Me.mat.Name = "mat"
+        Me.mat.Size = New System.Drawing.Size(1049, 367)
+        Me.mat.TabIndex = 0
+        Me.mat.Text = ""
         '
         'TabPage2
         '
@@ -79,6 +92,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.workspace.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -87,4 +101,5 @@ Partial Class Form1
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Button1 As Button
+    Friend WithEvents mat As RichTextBox
 End Class
