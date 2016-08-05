@@ -26,7 +26,8 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.mat = New System.Windows.Forms.RichTextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.saveBt = New System.Windows.Forms.Button()
+        Me.importBt = New System.Windows.Forms.Button()
         Me.workspace.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -73,21 +74,33 @@ Partial Class Form1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Button1
+        'saveBt
         '
-        Me.Button1.Location = New System.Drawing.Point(4, 405)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(264, 62)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.saveBt.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.saveBt.Location = New System.Drawing.Point(4, 405)
+        Me.saveBt.Name = "saveBt"
+        Me.saveBt.Size = New System.Drawing.Size(264, 62)
+        Me.saveBt.TabIndex = 0
+        Me.saveBt.Text = "Save File"
+        Me.saveBt.UseVisualStyleBackColor = True
+        '
+        'importBt
+        '
+        Me.importBt.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.importBt.Location = New System.Drawing.Point(274, 405)
+        Me.importBt.Name = "importBt"
+        Me.importBt.Size = New System.Drawing.Size(264, 62)
+        Me.importBt.TabIndex = 1
+        Me.importBt.Text = "Import File"
+        Me.importBt.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1063, 479)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.importBt)
+        Me.Controls.Add(Me.saveBt)
         Me.Controls.Add(Me.workspace)
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -100,6 +113,7 @@ Partial Class Form1
     Friend WithEvents workspace As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents Button1 As Button
+    Friend WithEvents saveBt As Button
     Friend WithEvents mat As RichTextBox
+    Friend WithEvents importBt As Button
 End Class

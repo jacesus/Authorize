@@ -3,8 +3,9 @@
     Dim italic As Boolean = False
 
     Private Sub resizePatrol() Handles Me.Resize
-        workspace.Height = Height - Button1.Height - 70
-        Button1.Location = New Point(Button1.Location.X, Height - 120)
+        workspace.Height = Height - saveBt.Height - 70
+        saveBt.Location = New Point(saveBt.Location.X, Height - 120)
+        importBt.Location = New Point(importBt.Location.X, Height - 120)
     End Sub
     Sub IsKeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles mat.KeyDown
 
@@ -57,8 +58,4 @@
             bool = True
         End If
     End Sub
-
 End Class
-
-
-'7719
