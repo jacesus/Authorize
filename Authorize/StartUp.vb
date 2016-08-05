@@ -2,6 +2,7 @@
 
 Public Class StartUp
 
+    Dim pass As String = ""
     Dim wr As StreamWriter
     Dim re As StreamReader
     Dim p As String = "C:\Users\Hamoudy\Documents\Authorize"
@@ -23,13 +24,29 @@ Public Class StartUp
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Form1.setProject(bNameList.SelectedItem)
-        Form1.Show()
-        Me.Close()
+        If pBox.Text = pass Then
+            Form1.setProject(bNameList.SelectedItem)
+            Form1.Show()
+            Me.Close()
+        Else
+            MsgBox("Wrong password.", MsgBoxStyle.Critical)
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         addProj.Show()
+    End Sub
+
+    Private Sub bNameList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles bNameList.SelectedIndexChanged
+
+        re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + bNameList.SelectedItem + "\info.aut")
+        re.ReadLine() : re.ReadLine() : pass = re.ReadLine()
+        pBox.Text = ""
+        If pass = "" Then
+            pBox.Enabled = False
+        Else
+            pBox.Enabled = True
+        End If
     End Sub
 End Class
 

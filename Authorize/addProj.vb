@@ -32,6 +32,9 @@ Public Class addProj
                 wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + pName.Text + "\info.aut", True)
                 wr.WriteLine(pName.Text) : wr.WriteLine(pAuthor.Text) : wr.WriteLine(pPass.Text)
                 wr.Close()
+                StartUp.Close()
+                StartUp.Show()
+                Me.Close()
             Else
                 MsgBox("Please fill in all information.", MsgBoxStyle.Critical)
             End If
