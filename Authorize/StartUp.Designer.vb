@@ -26,6 +26,7 @@ Partial Class StartUp
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'bNameList
@@ -64,11 +65,22 @@ Partial Class StartUp
         Me.TextBox1.Size = New System.Drawing.Size(311, 20)
         Me.TextBox1.TabIndex = 3
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(398, 249)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(152, 51)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Add"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'StartUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(721, 378)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -84,4 +96,5 @@ Partial Class StartUp
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button2 As Button
 End Class

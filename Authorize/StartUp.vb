@@ -19,12 +19,17 @@ Public Class StartUp
         While re.EndOfStream = False
             bNameList.Items.Add(re.ReadLine)
         End While
+        re.Close()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form1.setProject(bNameList.SelectedItem)
         Form1.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        addProj.Show()
     End Sub
 End Class
 

@@ -28,6 +28,7 @@ Partial Class Form1
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.saveBt = New System.Windows.Forms.Button()
         Me.importBt = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.workspace.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -36,6 +37,7 @@ Partial Class Form1
         '
         Me.workspace.Controls.Add(Me.TabPage1)
         Me.workspace.Controls.Add(Me.TabPage2)
+        Me.workspace.Controls.Add(Me.TabPage3)
         Me.workspace.Dock = System.Windows.Forms.DockStyle.Top
         Me.workspace.Location = New System.Drawing.Point(0, 0)
         Me.workspace.Name = "workspace"
@@ -51,7 +53,7 @@ Partial Class Form1
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1055, 373)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.Text = "Main"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'mat
@@ -71,7 +73,7 @@ Partial Class Form1
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1055, 373)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.Text = "Characters"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'saveBt
@@ -93,6 +95,15 @@ Partial Class Form1
         Me.importBt.TabIndex = 1
         Me.importBt.Text = "Import File"
         Me.importBt.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(1055, 373)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Settings"
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -116,4 +127,5 @@ Partial Class Form1
     Friend WithEvents saveBt As Button
     Friend WithEvents mat As RichTextBox
     Friend WithEvents importBt As Button
+    Friend WithEvents TabPage3 As TabPage
 End Class
