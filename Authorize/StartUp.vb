@@ -21,6 +21,8 @@ Public Class StartUp
             bNameList.Items.Add(re.ReadLine)
         End While
         re.Close()
+
+        bNameList.SelectedIndex = 0
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -38,6 +40,9 @@ Public Class StartUp
     End Sub
 
     Private Sub bNameList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles bNameList.SelectedIndexChanged
+        'Sometimes, this file isn't found. Dig into this later
+        '----------------------------------------------------------------
+
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + bNameList.SelectedItem + "\info.aut")
         re.ReadLine() : re.ReadLine() : pass = re.ReadLine()
         pBox.Text = ""
@@ -48,7 +53,3 @@ Public Class StartUp
         End If
     End Sub
 End Class
-
-'If Not Directory.Exists(path) Then
-'Directory.CreateDirectory(path)
-'End If

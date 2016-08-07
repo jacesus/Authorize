@@ -6,6 +6,16 @@ Public Class Form1
     Dim re As StreamReader
     Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
 
+    Private Sub Form1_Load() Handles Me.Load
+
+    End Sub
+
+    Private Sub Form1_Close() Handles Me.FormClosing
+        If MsgBox("Would you like to save your progress?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            saveBt_Click()
+        End If
+    End Sub
+
     Private Sub resizePatrol() Handles Me.Resize
         workspace.Height = Height - saveBt.Height - 70
         saveBt.Location = New Point(saveBt.Location.X, Height - 120)
@@ -66,7 +76,7 @@ Public Class Form1
         oProject = pName
     End Sub
 
-    Private Sub saveBt_Click(sender As Object, e As EventArgs) Handles saveBt.Click
+    Private Sub saveBt_Click() Handles saveBt.Click
         save.ShowDialog()
         If save.FileName <> "" Then
             mat.SaveFile(save.FileName())
