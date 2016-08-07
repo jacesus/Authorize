@@ -26,9 +26,11 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.mat = New System.Windows.Forms.RichTextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.saveBt = New System.Windows.Forms.Button()
         Me.importBt = New System.Windows.Forms.Button()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.save = New System.Windows.Forms.SaveFileDialog()
+        Me.import = New System.Windows.Forms.OpenFileDialog()
         Me.workspace.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -76,6 +78,15 @@ Partial Class Form1
         Me.TabPage2.Text = "Characters"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(1055, 373)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Settings"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
         'saveBt
         '
         Me.saveBt.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -96,14 +107,15 @@ Partial Class Form1
         Me.importBt.Text = "Import File"
         Me.importBt.UseVisualStyleBackColor = True
         '
-        'TabPage3
+        'save
         '
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1055, 373)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Settings"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.save.Filter = "Rich test format|*.rtf|Text file|*.txt|All files|*.*"
+        '
+        'import
+        '
+        Me.import.Filter = "Rich test format|*.rtf|Simple text file|*.txt|All text files|*.rtf; *.txt|All fil" &
+    "es|*.*"
+        Me.import.FilterIndex = 3
         '
         'Form1
         '
@@ -128,4 +140,6 @@ Partial Class Form1
     Friend WithEvents mat As RichTextBox
     Friend WithEvents importBt As Button
     Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents save As SaveFileDialog
+    Friend WithEvents import As OpenFileDialog
 End Class

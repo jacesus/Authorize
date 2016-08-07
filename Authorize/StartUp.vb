@@ -38,7 +38,6 @@ Public Class StartUp
     End Sub
 
     Private Sub bNameList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles bNameList.SelectedIndexChanged
-
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + bNameList.SelectedItem + "\info.aut")
         re.ReadLine() : re.ReadLine() : pass = re.ReadLine()
         pBox.Text = ""

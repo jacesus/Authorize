@@ -37,7 +37,7 @@ Partial Class addProj
         Me.Button1.Location = New System.Drawing.Point(34, 210)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
+        Me.Button1.TabIndex = 5
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -55,7 +55,7 @@ Partial Class addProj
         Me.pName.Location = New System.Drawing.Point(87, 40)
         Me.pName.Name = "pName"
         Me.pName.Size = New System.Drawing.Size(100, 20)
-        Me.pName.TabIndex = 2
+        Me.pName.TabIndex = 1
         '
         'CheckBox1
         '
@@ -72,7 +72,7 @@ Partial Class addProj
         Me.pAuthor.Location = New System.Drawing.Point(87, 91)
         Me.pAuthor.Name = "pAuthor"
         Me.pAuthor.Size = New System.Drawing.Size(100, 20)
-        Me.pAuthor.TabIndex = 5
+        Me.pAuthor.TabIndex = 2
         '
         'Label2
         '
@@ -89,7 +89,7 @@ Partial Class addProj
         Me.pPass.Location = New System.Drawing.Point(87, 163)
         Me.pPass.Name = "pPass"
         Me.pPass.Size = New System.Drawing.Size(100, 20)
-        Me.pPass.TabIndex = 7
+        Me.pPass.TabIndex = 4
         '
         'Label3
         '
