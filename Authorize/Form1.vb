@@ -80,6 +80,7 @@ Public Class Form1
         save.ShowDialog()
         If save.FileName <> "" Then
             mat.SaveFile(save.FileName())
+            mat.SaveFile(p + "\" + oProject + "\text.rtf")
         End If
         save.FileName = ""
     End Sub

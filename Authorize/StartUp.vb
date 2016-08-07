@@ -22,7 +22,9 @@ Public Class StartUp
         End While
         re.Close()
 
-        bNameList.SelectedIndex = 0
+        If bNameList.Items.Count <> 0 Then
+            bNameList.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
