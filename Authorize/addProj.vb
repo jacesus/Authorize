@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class addProj
-    Dim p As String = "C:\Users\Hamoudy\Documents\Authorize"
+    Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
     Dim wr As StreamWriter
     Dim re As StreamReader
 

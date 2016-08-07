@@ -5,7 +5,7 @@ Public Class StartUp
     Dim pass As String = ""
     Dim wr As StreamWriter
     Dim re As StreamReader
-    Dim p As String = "C:\Users\Hamoudy\Documents\Authorize"
+    Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
 
     Private Sub StartUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
