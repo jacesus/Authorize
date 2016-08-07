@@ -4,15 +4,28 @@ Public Class Form1
     Dim italic As Boolean = False
     Dim oProject As String
     Dim re As StreamReader
+    Dim wr As StreamWriter
     Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
 
     Private Sub Form1_Load() Handles Me.Load
-
+        Dim path As String = p + "\" + oProject
+        If File.Exists(path + "\text.rtf") Then
+            mat.LoadFile(path + "\text.rtf")
+        Else
+            wr = My.Computer.FileSystem.OpenTextFileWriter(path + "\text.rtf", True)
+            wr.Close()
+        End If
     End Sub
 
     Private Sub Form1_Close() Handles Me.FormClosing
-        If MsgBox("Would you like to save your progress?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            saveBt_Click()
+        '************************************************
+        re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\text.rtf")
+        Dim comp As New RichTextBox
+        comp.Rtf = re.ReadToEnd
+        If mat.Rtf <> comp.Rtf Then
+            If MsgBox("Would you like to save your progress?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                saveBt_click()
+            End If
         End If
     End Sub
 
@@ -76,11 +89,26 @@ Public Class Form1
         oProject = pName
     End Sub
 
-    Private Sub saveBt_Click() Handles saveBt.Click
+    Private Sub saveDial()
         save.ShowDialog()
         If save.FileName <> "" Then
             mat.SaveFile(save.FileName())
-            mat.SaveFile(p + "\" + oProject + "\text.rtf")
+        End If
+    End Sub
+
+    Private Sub saveBt_click() Handles saveBt.Click
+        mat.SaveFile(p + "\" + oProject + "\text.rtf")
+        re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\info.aut")
+        re.ReadLine() : re.ReadLine() : re.ReadLine()
+        Dim path As String = re.ReadLine()
+        re.Close()
+        If path = "" Then
+            saveDial()
+            wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + oProject + "\info.aut", True)
+            wr.WriteLine(save.FileName)
+            wr.Close()
+        Else
+            mat.SaveFile(path)
         End If
         save.FileName = ""
     End Sub
@@ -100,5 +128,9 @@ Public Class Form1
                 MsgBox("Incorrect File Format!", MsgBoxStyle.Critical)
             End If
         End If
+    End Sub
+
+    Private Sub saveBt_Click(sender As Object, e As EventArgs) Handles saveBt.Click
+
     End Sub
 End Class

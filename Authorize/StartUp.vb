@@ -53,5 +53,6 @@ Public Class StartUp
         Else
             pBox.Enabled = True
         End If
+        re.Close()
     End Sub
 End Class
