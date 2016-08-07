@@ -23,10 +23,10 @@ Partial Class StartUp
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.bNameList = New System.Windows.Forms.ListBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.pOpen = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pBox = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.pAdd = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'bNameList
@@ -39,15 +39,15 @@ Partial Class StartUp
         Me.bNameList.Size = New System.Drawing.Size(380, 345)
         Me.bNameList.TabIndex = 0
         '
-        'Button1
+        'pOpen
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(398, 306)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(152, 51)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Open"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.pOpen.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pOpen.Location = New System.Drawing.Point(398, 306)
+        Me.pOpen.Name = "pOpen"
+        Me.pOpen.Size = New System.Drawing.Size(152, 51)
+        Me.pOpen.TabIndex = 1
+        Me.pOpen.Text = "Open"
+        Me.pOpen.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -69,25 +69,25 @@ Partial Class StartUp
         Me.pBox.TabIndex = 3
         Me.pBox.UseSystemPasswordChar = True
         '
-        'Button2
+        'pAdd
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(398, 249)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(152, 51)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Add"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.pAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pAdd.Location = New System.Drawing.Point(398, 249)
+        Me.pAdd.Name = "pAdd"
+        Me.pAdd.Size = New System.Drawing.Size(152, 51)
+        Me.pAdd.TabIndex = 4
+        Me.pAdd.Text = "Add"
+        Me.pAdd.UseVisualStyleBackColor = True
         '
         'StartUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(721, 378)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.pAdd)
         Me.Controls.Add(Me.pBox)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.pOpen)
         Me.Controls.Add(Me.bNameList)
         Me.Name = "StartUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -98,8 +98,8 @@ Partial Class StartUp
     End Sub
 
     Friend WithEvents bNameList As ListBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents pOpen As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents pBox As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents pAdd As Button
 End Class

@@ -1,12 +1,18 @@
 ﻿Imports System.IO
 Public Class Form1
+    '
+    'Global Variables
+    '
     Dim bold As Boolean = False
     Dim italic As Boolean = False
     Dim oProject As String
     Dim re As StreamReader
     Dim wr As StreamWriter
     Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
-
+    '
+    'Form Open / Close
+    'Handles loading existing files and prompting for save
+    '
     Private Sub Form1_Load() Handles Me.Load
         Dim path As String = p + "\" + oProject
         If File.Exists(path + "\text.rtf") Then
@@ -16,9 +22,7 @@ Public Class Form1
             wr.Close()
         End If
     End Sub
-
     Private Sub Form1_Close() Handles Me.FormClosing
-        '************************************************
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\text.rtf")
         Dim comp As New RichTextBox
         comp.Rtf = re.ReadToEnd
@@ -28,7 +32,10 @@ Public Class Form1
             End If
         End If
     End Sub
-
+    '
+    'Always On
+    'Handles form aesthetic on resize and Bold-Italic Shortcuts
+    '
     Private Sub resizePatrol() Handles Me.Resize
         workspace.Height = Height - saveBt.Height - 70
         saveBt.Location = New Point(saveBt.Location.X, Height - 120)
@@ -77,7 +84,9 @@ Public Class Form1
         End If
 
     End Sub
-
+    '
+    'Misc
+    '
     Sub toggle(ByRef bool As Boolean)
         If bool = True Then
             bool = False
@@ -88,14 +97,15 @@ Public Class Form1
     Sub setProject(pName As String)
         oProject = pName
     End Sub
-
+    '
+    'Save / Import
+    '
     Private Sub saveDial()
         save.ShowDialog()
         If save.FileName <> "" Then
             mat.SaveFile(save.FileName())
         End If
     End Sub
-
     Private Sub saveBt_click() Handles saveBt.Click
         mat.SaveFile(p + "\" + oProject + "\text.rtf")
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\info.aut")
@@ -112,7 +122,6 @@ Public Class Form1
         End If
         save.FileName = ""
     End Sub
-
     Private Sub importBt_Click(sender As Object, e As EventArgs) Handles importBt.Click
         import.ShowDialog()
         Dim f As String = import.FileName
@@ -130,7 +139,4 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub saveBt_Click(sender As Object, e As EventArgs) Handles saveBt.Click
-
-    End Sub
 End Class

@@ -22,7 +22,7 @@ Partial Class addProj
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.addBt = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pName = New System.Windows.Forms.TextBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -32,14 +32,14 @@ Partial Class addProj
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'addBt
         '
-        Me.Button1.Location = New System.Drawing.Point(34, 210)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.addBt.Location = New System.Drawing.Point(34, 210)
+        Me.addBt.Name = "addBt"
+        Me.addBt.Size = New System.Drawing.Size(75, 23)
+        Me.addBt.TabIndex = 5
+        Me.addBt.Text = "Add"
+        Me.addBt.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -112,7 +112,7 @@ Partial Class addProj
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.pName)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.addBt)
         Me.Name = "addProj"
         Me.Text = "addProj"
         Me.ResumeLayout(False)
@@ -120,7 +120,7 @@ Partial Class addProj
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents addBt As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents pName As TextBox
     Friend WithEvents CheckBox1 As CheckBox

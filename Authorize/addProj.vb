@@ -1,15 +1,19 @@
 ﻿Imports System.IO
 
 Public Class addProj
+    '
+    'Global Variables
+    '
     Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
     Dim wr As StreamWriter
     Dim re As StreamReader
-
+    '
+    'Password Exists?
+    '
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         toggle(pPass.Enabled)
         pPass.Text = ""
     End Sub
-
     Sub toggle(ByRef bool As Boolean)
         If bool = True Then
             bool = False
@@ -17,8 +21,11 @@ Public Class addProj
             bool = True
         End If
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    '
+    'Add Button
+    'Creates all the project sub-folders: Info.aut, Char.aut, Set.aut, and Text.rtf
+    '
+    Private Sub addBt_Click(sender As Object, e As EventArgs) Handles addBt.Click
         If Not Directory.Exists(p + "\" + pName.Text) Then
             If pName.Text <> "" And pAuthor.Text <> "" Then
                 Directory.CreateDirectory(p + "\" + pName.Text)
