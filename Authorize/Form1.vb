@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Public Class mainScreen
+Public Class Form1
     '
     'Global Variables
     '
@@ -15,9 +15,10 @@ Public Class mainScreen
     ' 
     Private Sub Form1_Load() Handles Me.Load
         Dim path As String = p + "\" + oProject + "\text.rtf"
-        wr = My.Computer.FileSystem.OpenTextFileWriter(path, True)
-        wr.Close()
-        mat.LoadFile(path)
+        Dim f As FileStream = File.Open(path, FileMode.OpenOrCreate)
+        f.Close()
+        'not loading on empty file
+        mat.LoadFile(path, RichTextBoxStreamType.RichText)
     End Sub
     Private Sub Form1_Close() Handles Me.FormClosing
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\text.rtf")

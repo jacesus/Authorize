@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class mainScreen
+Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -208,7 +208,7 @@ Partial Class mainScreen
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'mainScreen
+        'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -216,7 +216,7 @@ Partial Class mainScreen
         Me.Controls.Add(Me.saveBt)
         Me.Controls.Add(Me.importBt)
         Me.Controls.Add(Me.workspace)
-        Me.Name = "mainScreen"
+        Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.workspace.ResumeLayout(False)

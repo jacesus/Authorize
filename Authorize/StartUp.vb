@@ -46,7 +46,7 @@ Public Class StartUp
         addProj.Show()
     End Sub
     '
-    'Password Existance Checker (Password Box Enabled or Not) 
+    'Password Existance Checker (Password Box Enabled or Not)
     '
     Private Sub bNameList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles bNameList.SelectedIndexChanged
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + bNameList.SelectedItem + "\info.aut")
