@@ -23,7 +23,7 @@ Public Class addProj
     End Sub
     '
     'Add Button
-    'Creates all the project sub-folders: Info.aut, Char.aut, Set.aut, and Text.rtf
+    'Creates all the project sub-folders and files: Info.aut, Char folder, Set.aut, and Text.rtf
     '
     Private Sub addBt_Click(sender As Object, e As EventArgs) Handles addBt.Click
         If Not Directory.Exists(p + "\" + pName.Text) Then
@@ -35,8 +35,6 @@ Public Class addProj
                 wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + pName.Text + "\char.aut", True)
                 wr.Close()
                 wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + pName.Text + "\set.aut", True)
-                wr.Close()
-                wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + pName.Text + "\text.rft", True)
                 wr.Close()
                 wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + pName.Text + "\info.aut", True)
                 wr.WriteLine(pName.Text) : wr.WriteLine(pAuthor.Text) : wr.WriteLine(pPass.Text)

@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Public Class Form1
+Public Class mainScreen
     '
     'Global Variables
     '
@@ -12,20 +12,18 @@ Public Class Form1
     '
     'Form Open / Close
     'Handles loading existing files and prompting for save
-    '
+    ' 
     Private Sub Form1_Load() Handles Me.Load
-        Dim path As String = p + "\" + oProject
-        If File.Exists(path + "\text.rtf") Then
-            mat.LoadFile(path + "\text.rtf")
-        Else
-            wr = My.Computer.FileSystem.OpenTextFileWriter(path + "\text.rtf", True)
-            wr.Close()
-        End If
+        Dim path As String = p + "\" + oProject + "\text.rtf"
+        wr = My.Computer.FileSystem.OpenTextFileWriter(path, True)
+        wr.Close()
+        mat.LoadFile(path)
     End Sub
     Private Sub Form1_Close() Handles Me.FormClosing
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\text.rtf")
         Dim comp As New RichTextBox
         comp.Rtf = re.ReadToEnd
+        re.Close()
         If mat.Rtf <> comp.Rtf Then
             If MsgBox("Would you like to save your progress?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 saveBt_click()
