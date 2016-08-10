@@ -117,6 +117,9 @@ Public Class Form1
     Sub setFirst(cCase As Boolean)
         first = cCase
     End Sub
+    Sub doNothing()
+
+    End Sub
     '
     'Save / Import
     '
