@@ -36,7 +36,7 @@ Public Class addProj
                 wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + pName.Text + "\set.aut", True)
                 wr.Close()
                 wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + pName.Text + "\info.aut", True)
-                wr.WriteLine(pName.Text) : wr.WriteLine(pAuthor.Text) : wr.WriteLine(pPass.Text)
+                wr.WriteLine(pName.Text) : wr.WriteLine(pAuthor.Text) : wr.WriteLine(pPass.Text) : wr.Write("1")
                 wr.Close()
                 StartUp.Close()
                 StartUp.Show()

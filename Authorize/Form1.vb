@@ -6,6 +6,7 @@ Public Class Form1
     Dim bold As Boolean = False
     Dim italic As Boolean = False
     Dim oProject As String
+    Dim first As Boolean
     Dim re As StreamReader
     Dim wr As StreamWriter
     Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
@@ -15,10 +16,19 @@ Public Class Form1
     ' 
     Private Sub Form1_Load() Handles Me.Load
         Dim path As String = p + "\" + oProject + "\text.rtf"
-        Dim f As FileStream = File.Open(path, FileMode.OpenOrCreate)
-        f.Close()
-        'not loading on empty file
-        mat.LoadFile(path, RichTextBoxStreamType.RichText)
+        re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\info.aut")
+        re.ReadLine() : re.ReadLine() : re.ReadLine()
+        If re.ReadLine = "1" Then
+            re.Close()
+            wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + oProject + "\info.aut", True)
+            wr.WriteLine("0")
+            wr.Close()
+            mat.SaveFile(path)
+        Else
+            re.Close()
+            mat.LoadFile(path)
+        End If
+
     End Sub
     Private Sub Form1_Close() Handles Me.FormClosing
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\text.rtf")
@@ -49,14 +59,18 @@ Public Class Form1
                 If bold = True Then
                     If italic = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
+                        st.Font = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold)
+                        st.Font = New Font(mat.Font, FontStyle.Bold)
                     End If
                 Else
                     If italic = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Italic)
+                        st.Font = New Font(mat.Font, FontStyle.Italic)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Regular)
+                        st.Font = New Font(mat.Font, FontStyle.Regular)
                     End If
                 End If
             End If
@@ -66,14 +80,18 @@ Public Class Form1
                 If italic = True Then
                     If bold = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
+                        st.Font = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Italic)
+                        st.Font = New Font(mat.Font, FontStyle.Italic)
                     End If
                 Else
                     If bold = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold)
+                        st.Font = New Font(mat.Font, FontStyle.Bold)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Regular)
+                        st.Font = New Font(mat.Font, FontStyle.Regular)
                     End If
                 End If
                 e.Handled = True
@@ -96,6 +114,9 @@ Public Class Form1
     Sub setProject(pName As String)
         oProject = pName
     End Sub
+    Sub setFirst(cCase As Boolean)
+        first = cCase
+    End Sub
     '
     'Save / Import
     '
@@ -108,10 +129,10 @@ Public Class Form1
     Private Sub saveBt_click() Handles saveBt.Click
         mat.SaveFile(p + "\" + oProject + "\text.rtf")
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\info.aut")
-        re.ReadLine() : re.ReadLine() : re.ReadLine()
+        re.ReadLine() : re.ReadLine() : re.ReadLine() : re.ReadLine()
         Dim path As String = re.ReadLine()
         re.Close()
-        If path = "" Then
+        If path = "" Or Not File.Exists(path) Then
             saveDial()
             wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + oProject + "\info.aut", True)
             wr.WriteLine(save.FileName)
