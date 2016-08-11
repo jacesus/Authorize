@@ -28,9 +28,7 @@ Partial Class Form1
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.charl = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
@@ -40,6 +38,14 @@ Partial Class Form1
         Me.import = New System.Windows.Forms.OpenFileDialog()
         Me.saveBt = New System.Windows.Forms.Button()
         Me.st = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lName = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.mName = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.fName = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.workspace.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -104,9 +110,15 @@ Partial Class Form1
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.CheckBox1)
-        Me.TabPage4.Controls.Add(Me.ComboBox1)
-        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Controls.Add(Me.ListBox1)
+        Me.TabPage4.Controls.Add(Me.Label4)
+        Me.TabPage4.Controls.Add(Me.lName)
+        Me.TabPage4.Controls.Add(Me.Label3)
+        Me.TabPage4.Controls.Add(Me.mName)
+        Me.TabPage4.Controls.Add(Me.Label2)
+        Me.TabPage4.Controls.Add(Me.fName)
+        Me.TabPage4.Controls.Add(Me.Label5)
+        Me.TabPage4.Controls.Add(Me.charl)
         Me.TabPage4.Controls.Add(Me.Button1)
         Me.TabPage4.Controls.Add(Me.Label1)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
@@ -117,30 +129,16 @@ Partial Class Form1
         Me.TabPage4.Text = "TabPage4"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'charl
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(120, 134)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 9
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(153, 84)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(197, 21)
-        Me.ComboBox1.TabIndex = 6
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(112, 126)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 8
+        Me.charl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.charl.FormattingEnabled = True
+        Me.charl.Items.AddRange(New Object() {"New Character..."})
+        Me.charl.Location = New System.Drawing.Point(9, 19)
+        Me.charl.MaxDropDownItems = 100
+        Me.charl.Name = "charl"
+        Me.charl.Size = New System.Drawing.Size(197, 21)
+        Me.charl.TabIndex = 6
         '
         'Button1
         '
@@ -154,7 +152,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 24)
+        Me.Label1.Location = New System.Drawing.Point(6, 3)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(98, 13)
         Me.Label1.TabIndex = 7
@@ -219,6 +217,74 @@ Partial Class Form1
         Me.st.TabIndex = 3
         Me.st.Text = "Style"
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(96, 176)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
+        Me.ListBox1.TabIndex = 19
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(19, 176)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 13)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Nicknames:"
+        '
+        'lName
+        '
+        Me.lName.Location = New System.Drawing.Point(96, 134)
+        Me.lName.Name = "lName"
+        Me.lName.ReadOnly = True
+        Me.lName.Size = New System.Drawing.Size(105, 20)
+        Me.lName.TabIndex = 17
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(19, 137)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(61, 13)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "Last Name:"
+        '
+        'mName
+        '
+        Me.mName.Location = New System.Drawing.Point(96, 96)
+        Me.mName.Name = "mName"
+        Me.mName.ReadOnly = True
+        Me.mName.Size = New System.Drawing.Size(105, 20)
+        Me.mName.TabIndex = 15
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(19, 99)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Middle Name:"
+        '
+        'fName
+        '
+        Me.fName.Location = New System.Drawing.Point(96, 63)
+        Me.fName.Name = "fName"
+        Me.fName.ReadOnly = True
+        Me.fName.Size = New System.Drawing.Size(105, 20)
+        Me.fName.TabIndex = 13
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(19, 66)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(60, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "First Name:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -253,11 +319,17 @@ Partial Class Form1
     Friend WithEvents saveBt As Button
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents st As Label
+    Friend WithEvents charl As ComboBox
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lName As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents mName As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents fName As TextBox
+    Friend WithEvents Label5 As Label
 End Class

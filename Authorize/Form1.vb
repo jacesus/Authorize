@@ -10,6 +10,7 @@ Public Class Form1
     Dim re As StreamReader
     Dim wr As StreamWriter
     Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
+    Dim charFolder As String = p + "\" + oProject + "\Char"
     '
     'Form Open / Close
     'Handles loading existing files and prompting for save
@@ -114,9 +115,9 @@ Public Class Form1
     Sub setProject(pName As String)
         oProject = pName
     End Sub
-    Sub setFirst(cCase As Boolean)
-        first = cCase
-    End Sub
+    Function getProject()
+        Return oProject
+    End Function
     '
     'Save / Import
     '
@@ -158,5 +159,13 @@ Public Class Form1
             End If
         End If
     End Sub
-
+    '
+    'Characters Tab
+    '
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles charl.SelectedIndexChanged
+        If charl.Text = "New Character..." Then
+            addChar1.Show()
+            charl.Text = ""
+        End If
+    End Sub
 End Class
