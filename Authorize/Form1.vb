@@ -59,18 +59,18 @@ Public Class Form1
                 If bold = True Then
                     If italic = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
-                        st.Font = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
+                        st.Font = New Font(st.Font, FontStyle.Bold Or FontStyle.Italic)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold)
-                        st.Font = New Font(mat.Font, FontStyle.Bold)
+                        st.Font = New Font(st.Font, FontStyle.Bold)
                     End If
                 Else
                     If italic = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Italic)
-                        st.Font = New Font(mat.Font, FontStyle.Italic)
+                        st.Font = New Font(st.Font, FontStyle.Italic)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Regular)
-                        st.Font = New Font(mat.Font, FontStyle.Regular)
+                        st.Font = New Font(st.Font, FontStyle.Regular)
                     End If
                 End If
             End If
@@ -80,18 +80,18 @@ Public Class Form1
                 If italic = True Then
                     If bold = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
-                        st.Font = New Font(mat.Font, FontStyle.Bold Or FontStyle.Italic)
+                        st.Font = New Font(st.Font, FontStyle.Bold Or FontStyle.Italic)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Italic)
-                        st.Font = New Font(mat.Font, FontStyle.Italic)
+                        st.Font = New Font(st.Font, FontStyle.Italic)
                     End If
                 Else
                     If bold = True Then
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Bold)
-                        st.Font = New Font(mat.Font, FontStyle.Bold)
+                        st.Font = New Font(st.Font, FontStyle.Bold)
                     Else
                         mat.SelectionFont = New Font(mat.Font, FontStyle.Regular)
-                        st.Font = New Font(mat.Font, FontStyle.Regular)
+                        st.Font = New Font(st.Font, FontStyle.Regular)
                     End If
                 End If
                 e.Handled = True
