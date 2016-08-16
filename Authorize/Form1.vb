@@ -30,6 +30,12 @@ Public Class Form1
             mat.LoadFile(path)
         End If
 
+        re = My.Computer.FileSystem.OpenTextFileReader(charFolder + "\charList.aut")
+        While re.EndOfStream = False
+            charl.Items.Add(re.ReadLine)
+        End While
+        re.Close()
+
     End Sub
     Private Sub Form1_Close() Handles Me.FormClosing
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\text.rtf")

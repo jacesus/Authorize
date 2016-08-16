@@ -12,20 +12,28 @@ Public Class addChar1
 
     Private Sub nextB_Click(sender As Object, e As EventArgs) Handles nextB.Click
         Dim fullName As String = fName.Text + " " + mName.Text + " " + lName.Text
-        Dim thisChar As String = charFolder + "/" + fullName
+        Dim thisChar As String = charFolder + "\" + fullName
 
         Dim wr As StreamWriter
-        wr = My.Computer.FileSystem.OpenTextFileWriter(charFolder + "/charList.aut", True)
+        wr = My.Computer.FileSystem.OpenTextFileWriter(charFolder + "\charList.aut", True)
         wr.WriteLine(fullName)
         wr.Close()
 
         Directory.CreateDirectory(thisChar)
-        wr = My.Computer.FileSystem.OpenTextFileWriter(thisChar + "/basics.aut", False)
+        wr = My.Computer.FileSystem.OpenTextFileWriter(thisChar + "\basics.aut", False)
         wr.WriteLine(fullName)
         For k As Integer = 0 To ListBox1.Items.Count - 1
             wr.WriteLine(ListBox1.Items.Item(k))
         Next
         wr.Close()
+
+        Dim re As StreamReader
+        Dim n As String
+        re = My.Computer.FileSystem.OpenTextFileReader(thisChar + "\basics.aut")
+        n = re.ReadLine()
+        Form1.charl.Items.Add(n)
+        re.Close()
+
         Close()
     End Sub
 End Class
