@@ -10,12 +10,13 @@ Public Class Form1
     Dim re As StreamReader
     Dim wr As StreamWriter
     Dim p As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\Authorize"
-    Dim charFolder As String = p + "\" + oProject + "\Char"
     '
     'Form Open / Close
     'Handles loading existing files and prompting for save
     ' 
     Private Sub Form1_Load() Handles Me.Load
+        Dim charFolder As String = p + "\" + oProject + "\Char"
+        MsgBox(oProject)
         Dim path As String = p + "\" + oProject + "\text.rtf"
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\info.aut")
         re.ReadLine() : re.ReadLine() : re.ReadLine()
@@ -29,6 +30,10 @@ Public Class Form1
             re.Close()
             mat.LoadFile(path)
         End If
+
+        MsgBox(charFolder)
+        wr = My.Computer.FileSystem.OpenTextFileWriter(charFolder + "\charList.aut", True)
+        wr.Close()
 
         re = My.Computer.FileSystem.OpenTextFileReader(charFolder + "\charList.aut")
         While re.EndOfStream = False
