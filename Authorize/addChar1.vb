@@ -36,6 +36,7 @@ Public Class addChar1
             re.Close()
 
             Close()
+            addChar2.Show()
         Else
             MsgBox("Please enter at least the first name before adding the character.", MsgBoxStyle.Critical)
         End If

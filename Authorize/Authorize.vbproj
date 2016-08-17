@@ -78,6 +78,12 @@
     <Compile Include="addChar1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="addChar2.Designer.vb">
+      <DependentUpon>addChar2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addChar2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="addProj.Designer.vb">
       <DependentUpon>addProj.vb</DependentUpon>
     </Compile>
@@ -116,6 +122,9 @@
   <ItemGroup>
     <EmbeddedResource Include="addChar1.resx">
       <DependentUpon>addChar1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addChar2.resx">
+      <DependentUpon>addChar2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addProj.resx">
       <DependentUpon>addProj.vb</DependentUpon>

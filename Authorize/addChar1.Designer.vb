@@ -154,6 +154,7 @@ Partial Class addChar1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.addNick)
         Me.Name = "addChar1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "addChar1"
         Me.ResumeLayout(False)
         Me.PerformLayout()
