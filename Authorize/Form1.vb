@@ -16,7 +16,6 @@ Public Class Form1
     ' 
     Private Sub Form1_Load() Handles Me.Load
         Dim charFolder As String = p + "\" + oProject + "\Char"
-        MsgBox(oProject)
         Dim path As String = p + "\" + oProject + "\text.rtf"
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\info.aut")
         re.ReadLine() : re.ReadLine() : re.ReadLine()
@@ -31,7 +30,6 @@ Public Class Form1
             mat.LoadFile(path)
         End If
 
-        MsgBox(charFolder)
         wr = My.Computer.FileSystem.OpenTextFileWriter(charFolder + "\charList.aut", True)
         wr.Close()
 
@@ -177,6 +175,14 @@ Public Class Form1
         If charl.Text = "New Character..." Then
             addChar1.Show()
             charl.Text = ""
+        ElseIf charl.Items.Contains(charl.Text)
+            nnList.Items.Clear()
+            re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\Char\" + charl.Text + "\basics.aut")
+            fName.Text = re.ReadLine
+            While re.EndOfStream = False
+                nnList.Items.Add(re.ReadLine)
+            End While
+            re.Close()
         End If
     End Sub
 End Class

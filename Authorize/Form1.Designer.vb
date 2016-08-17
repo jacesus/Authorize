@@ -28,6 +28,10 @@ Partial Class Form1
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.nnList = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.fName = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.charl = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,14 +42,6 @@ Partial Class Form1
         Me.import = New System.Windows.Forms.OpenFileDialog()
         Me.saveBt = New System.Windows.Forms.Button()
         Me.st = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lName = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.mName = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.fName = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.workspace.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -110,12 +106,8 @@ Partial Class Form1
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.ListBox1)
+        Me.TabPage4.Controls.Add(Me.nnList)
         Me.TabPage4.Controls.Add(Me.Label4)
-        Me.TabPage4.Controls.Add(Me.lName)
-        Me.TabPage4.Controls.Add(Me.Label3)
-        Me.TabPage4.Controls.Add(Me.mName)
-        Me.TabPage4.Controls.Add(Me.Label2)
         Me.TabPage4.Controls.Add(Me.fName)
         Me.TabPage4.Controls.Add(Me.Label5)
         Me.TabPage4.Controls.Add(Me.charl)
@@ -128,6 +120,41 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 0
         Me.TabPage4.Text = "TabPage4"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'nnList
+        '
+        Me.nnList.FormattingEnabled = True
+        Me.nnList.Location = New System.Drawing.Point(96, 116)
+        Me.nnList.Name = "nnList"
+        Me.nnList.Size = New System.Drawing.Size(120, 95)
+        Me.nnList.TabIndex = 19
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(19, 116)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 13)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Nicknames:"
+        '
+        'fName
+        '
+        Me.fName.BackColor = System.Drawing.SystemColors.Window
+        Me.fName.Location = New System.Drawing.Point(96, 63)
+        Me.fName.Name = "fName"
+        Me.fName.ReadOnly = True
+        Me.fName.Size = New System.Drawing.Size(211, 20)
+        Me.fName.TabIndex = 13
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(19, 66)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Name:"
         '
         'charl
         '
@@ -217,74 +244,6 @@ Partial Class Form1
         Me.st.TabIndex = 3
         Me.st.Text = "Style"
         '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(96, 176)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox1.TabIndex = 19
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 176)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(63, 13)
-        Me.Label4.TabIndex = 18
-        Me.Label4.Text = "Nicknames:"
-        '
-        'lName
-        '
-        Me.lName.Location = New System.Drawing.Point(96, 134)
-        Me.lName.Name = "lName"
-        Me.lName.ReadOnly = True
-        Me.lName.Size = New System.Drawing.Size(105, 20)
-        Me.lName.TabIndex = 17
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 137)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 13)
-        Me.Label3.TabIndex = 16
-        Me.Label3.Text = "Last Name:"
-        '
-        'mName
-        '
-        Me.mName.Location = New System.Drawing.Point(96, 96)
-        Me.mName.Name = "mName"
-        Me.mName.ReadOnly = True
-        Me.mName.Size = New System.Drawing.Size(105, 20)
-        Me.mName.TabIndex = 15
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 99)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Middle Name:"
-        '
-        'fName
-        '
-        Me.fName.Location = New System.Drawing.Point(96, 63)
-        Me.fName.Name = "fName"
-        Me.fName.ReadOnly = True
-        Me.fName.Size = New System.Drawing.Size(105, 20)
-        Me.fName.TabIndex = 13
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 66)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 13)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "First Name:"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -324,12 +283,8 @@ Partial Class Form1
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents st As Label
     Friend WithEvents charl As ComboBox
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents nnList As ListBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents lName As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents mName As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents fName As TextBox
     Friend WithEvents Label5 As Label
 End Class
