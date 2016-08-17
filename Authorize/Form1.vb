@@ -83,9 +83,8 @@ Public Class Form1
                         st.Font = New Font(st.Font, FontStyle.Regular)
                     End If
                 End If
-            End If
 
-            If e.KeyCode = Keys.I Then
+            ElseIf e.KeyCode = Keys.I Then
                 toggle(italic)
                 If italic = True Then
                     If bold = True Then
@@ -139,12 +138,16 @@ Public Class Form1
     Private Sub saveBt_click() Handles saveBt.Click
         mat.SaveFile(p + "\" + oProject + "\text.rtf")
         re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\info.aut")
-        re.ReadLine() : re.ReadLine() : re.ReadLine() : re.ReadLine()
+        Dim a1 = re.ReadLine() : Dim a2 = re.ReadLine() : Dim a3 = re.ReadLine() : Dim a4 = re.ReadLine()
         Dim path As String = re.ReadLine()
         re.Close()
         If path = "" Or Not File.Exists(path) Then
             saveDial()
-            wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + oProject + "\info.aut", True)
+            wr = My.Computer.FileSystem.OpenTextFileWriter(p + "\" + oProject + "\info.aut", False)
+            wr.WriteLine(a1)
+            wr.WriteLine(a2)
+            wr.WriteLine(a3)
+            wr.WriteLine(a4)
             wr.WriteLine(save.FileName)
             wr.Close()
         Else
