@@ -31,8 +31,9 @@ Partial Class addChar1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.nName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.nList = New System.Windows.Forms.ListBox()
         Me.nextB = New System.Windows.Forms.Button()
+        Me.delNick = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'addNick
@@ -108,13 +109,13 @@ Partial Class addChar1
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Nicknames:"
         '
-        'ListBox1
+        'nList
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(89, 119)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox1.TabIndex = 11
+        Me.nList.FormattingEnabled = True
+        Me.nList.Location = New System.Drawing.Point(89, 119)
+        Me.nList.Name = "nList"
+        Me.nList.Size = New System.Drawing.Size(120, 95)
+        Me.nList.TabIndex = 11
         '
         'nextB
         '
@@ -125,13 +126,24 @@ Partial Class addChar1
         Me.nextB.Text = "Next"
         Me.nextB.UseVisualStyleBackColor = True
         '
+        'delNick
+        '
+        Me.delNick.Location = New System.Drawing.Point(12, 190)
+        Me.delNick.Name = "delNick"
+        Me.delNick.Size = New System.Drawing.Size(72, 23)
+        Me.delNick.TabIndex = 13
+        Me.delNick.Text = "Delete"
+        Me.delNick.UseVisualStyleBackColor = True
+        '
         'addChar1
         '
+        Me.AcceptButton = Me.nextB
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(227, 271)
+        Me.Controls.Add(Me.delNick)
         Me.Controls.Add(Me.nextB)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.nList)
         Me.Controls.Add(Me.nName)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.lName)
@@ -157,6 +169,7 @@ Partial Class addChar1
     Friend WithEvents Label3 As Label
     Friend WithEvents nName As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents nList As ListBox
     Friend WithEvents nextB As Button
+    Friend WithEvents delNick As Button
 End Class
