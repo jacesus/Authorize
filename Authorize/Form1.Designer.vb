@@ -42,11 +42,16 @@ Partial Class Form1
         Me.import = New System.Windows.Forms.OpenFileDialog()
         Me.saveBt = New System.Windows.Forms.Button()
         Me.st = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.workspace.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'workspace
@@ -106,6 +111,10 @@ Partial Class Form1
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Controls.Add(Me.Label3)
+        Me.TabPage4.Controls.Add(Me.NumericUpDown1)
+        Me.TabPage4.Controls.Add(Me.Label2)
         Me.TabPage4.Controls.Add(Me.nnList)
         Me.TabPage4.Controls.Add(Me.Label4)
         Me.TabPage4.Controls.Add(Me.fName)
@@ -244,6 +253,42 @@ Partial Class Form1
         Me.st.TabIndex = 3
         Me.st.Text = "Style"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(507, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(29, 13)
+        Me.Label2.TabIndex = 20
+        Me.Label2.Text = "Age:"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Window
+        Me.NumericUpDown1.Location = New System.Drawing.Point(569, 20)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.ReadOnly = True
+        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 20)
+        Me.NumericUpDown1.TabIndex = 21
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBox1.Location = New System.Drawing.Point(584, 67)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(211, 20)
+        Me.TextBox1.TabIndex = 23
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(507, 70)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(45, 13)
+        Me.Label3.TabIndex = 22
+        Me.Label3.Text = "Gender:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -262,6 +307,7 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -287,4 +333,8 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents fName As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label2 As Label
 End Class

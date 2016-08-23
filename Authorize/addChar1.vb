@@ -21,7 +21,7 @@ Public Class addChar1
             wr.Close()
 
             Directory.CreateDirectory(thisChar)
-            wr = My.Computer.FileSystem.OpenTextFileWriter(thisChar + "\basics.aut", False)
+            wr = My.Computer.FileSystem.OpenTextFileWriter(thisChar + "\cName.aut", False)
             wr.WriteLine(fullName)
             For k As Integer = 0 To nList.Items.Count - 1
                 wr.WriteLine(nList.Items.Item(k))
@@ -30,7 +30,7 @@ Public Class addChar1
 
             Dim re As StreamReader
             Dim n As String
-            re = My.Computer.FileSystem.OpenTextFileReader(thisChar + "\basics.aut")
+            re = My.Computer.FileSystem.OpenTextFileReader(thisChar + "\cName.aut")
             n = re.ReadLine()
             Form1.charl.Items.Add(n)
             re.Close()

@@ -180,7 +180,7 @@ Public Class Form1
             charl.Text = ""
         ElseIf charl.Items.Contains(charl.Text)
             nnList.Items.Clear()
-            re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\Char\" + charl.Text + "\basics.aut")
+            re = My.Computer.FileSystem.OpenTextFileReader(p + "\" + oProject + "\Char\" + charl.Text + "\cName.aut")
             fName.Text = re.ReadLine
             While re.EndOfStream = False
                 nnList.Items.Add(re.ReadLine)
